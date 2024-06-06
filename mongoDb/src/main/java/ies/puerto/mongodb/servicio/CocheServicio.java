@@ -3,6 +3,7 @@ package ies.puerto.mongodb.servicio;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import ies.puerto.mongodb.modelo.Coche;
@@ -13,6 +14,7 @@ public class CocheServicio {
 
     private CocheRepositorio cocheRepositorio;
 
+    @Autowired
     public void setCocheRepositorio(CocheRepositorio cocheRepositorio) {
         this.cocheRepositorio = cocheRepositorio;
     }
