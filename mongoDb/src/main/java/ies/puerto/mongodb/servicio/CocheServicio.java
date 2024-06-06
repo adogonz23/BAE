@@ -4,12 +4,13 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 
 import ies.puerto.mongodb.modelo.Coche;
 import ies.puerto.mongodb.repositorio.CocheRepositorio;
 
-@Service
+@Controller
 public class CocheServicio {
 
     private CocheRepositorio cocheRepositorio;

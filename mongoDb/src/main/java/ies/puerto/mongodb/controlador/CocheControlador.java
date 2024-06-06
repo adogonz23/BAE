@@ -17,7 +17,7 @@ import ies.puerto.mongodb.modelo.Coche;
 import ies.puerto.mongodb.servicio.CocheServicio;
 
 @RestController
-@RequestMapping("/api/coche")
+@RequestMapping("api/coche")
 public class CocheControlador {
     
     private CocheServicio cocheServicio;
