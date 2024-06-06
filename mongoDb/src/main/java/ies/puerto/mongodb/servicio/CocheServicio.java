@@ -5,8 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
-
 import ies.puerto.mongodb.modelo.Coche;
 import ies.puerto.mongodb.repositorio.CocheRepositorio;
 
@@ -27,8 +25,8 @@ public class CocheServicio {
          return cocheRepositorio.findAll();
     }
 
-    public Optional<Coche> getObjectById(Coche coche){
-        Optional<Coche> cocheBuscado = cocheRepositorio.findById(coche.getId());
+    public Optional<Coche> getObjectById(Integer id){
+        Optional<Coche> cocheBuscado = cocheRepositorio.findById(id);
         return cocheBuscado;
 
     }

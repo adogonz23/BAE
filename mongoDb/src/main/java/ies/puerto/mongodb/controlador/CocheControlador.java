@@ -3,6 +3,7 @@ package ies.puerto.mongodb.controlador;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.aggregation.ArithmeticOperators.Integral;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -39,8 +40,8 @@ public class CocheControlador {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity getObjectById(@RequestBody Coche coche){
-        return ResponseEntity.ok(cocheServicio.getObjectById(coche));
+    public ResponseEntity getObjectById(@RequestParam Integer id){
+        return ResponseEntity.ok(cocheServicio.getObjectById(id));
     }
 
     @DeleteMapping("/{id}")
