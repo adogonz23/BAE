@@ -24,14 +24,13 @@ public class CocheServicio {
          return cocheRepositorio.findAll();
     }
 
-    public void updateObject(Coche coche){
-    }
-
     public Optional<Coche> getObjectById(Coche coche){
         Optional<Coche> cocheBuscado = cocheRepositorio.findById(coche.getId());
         return cocheBuscado;
 
     }
-    public void delete(){}
+    public void delete(Integer id){
+        cocheRepositorio.deleteById(id);
+    }
 
 }
