@@ -4,11 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
+
 import ies.puerto.mongodb.modelo.Coche;
 import ies.puerto.mongodb.repositorio.CocheRepositorio;
 
-@Controller
+@Service
 public class CocheServicio {
 
     private CocheRepositorio cocheRepositorio;
@@ -17,6 +18,7 @@ public class CocheServicio {
     public void setCocheRepositorio(CocheRepositorio cocheRepositorio) {
         this.cocheRepositorio = cocheRepositorio;
     }
+
     public void addObject(Coche coche){
         cocheRepositorio.insert(coche);
     }
@@ -25,12 +27,13 @@ public class CocheServicio {
          return cocheRepositorio.findAll();
     }
 
-    public Optional<Coche> getObjectById(Integer id){
-        Optional<Coche> cocheBuscado = cocheRepositorio.findById(id);
+    public Coche getObjectByID(int id){
+        Coche cocheBuscado = cocheRepositorio.findById(id).orElseThrow(() ->new RuntimeException("aaaa")) ;
+        
         return cocheBuscado;
 
     }
-    public void delete(Integer id){
+    public void delete(int id){
         cocheRepositorio.deleteById(id);
     }
 
