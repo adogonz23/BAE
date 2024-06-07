@@ -37,7 +37,7 @@ public class PersonajeControlador {
     }
     
     @GetMapping("/{id}")
-    public ResponseEntity getByName(@RequestParam String nombre) {
+    public ResponseEntity getById(@RequestParam String nombre) {
         return  ResponseEntity.ok(personajeServicio.getById(nombre));
     }
 
@@ -51,5 +51,5 @@ public class PersonajeControlador {
         personajeServicio.deletePersonaje(nombre);
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
     }
-    
+   
 }
