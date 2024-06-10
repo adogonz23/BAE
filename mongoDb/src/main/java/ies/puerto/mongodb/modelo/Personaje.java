@@ -9,9 +9,8 @@ import org.springframework.data.mongodb.core.mapping.Field;
 @Document("Personaje")
 public class Personaje {
     @Id
+
     private String id;
-    @Field(name = "nombre")
-    String nombre;
 
    
     List<String>habilidades;
@@ -25,19 +24,19 @@ public class Personaje {
     public Personaje() {
     }
 
-    public Personaje(String nombre, List<String> habilidades, String fechaSalida, List<String> skins) {
-        this.nombre = nombre;
+    public Personaje(String id,List<String> habilidades, String fechaSalida, List<String> skins) {
+       this.id=id;
         this.habilidades = habilidades;
         this.fechaSalida = fechaSalida;
         this.skins = skins;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getId() {
+        return id;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setId(String id) {
+        this.id = id;
     }
 
     public List<String> getHabilidades() {
@@ -68,7 +67,7 @@ public class Personaje {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
+        result = prime * result + ((id == null) ? 0 : id.hashCode());
         return result;
     }
 
@@ -81,13 +80,15 @@ public class Personaje {
         if (getClass() != obj.getClass())
             return false;
         Personaje other = (Personaje) obj;
-        if (nombre == null) {
-            if (other.nombre != null)
+        if (id == null) {
+            if (other.id != null)
                 return false;
-        } else if (!nombre.equals(other.nombre))
+        } else if (!id.equals(other.id))
             return false;
         return true;
     }
+
+   
     
     
 }
